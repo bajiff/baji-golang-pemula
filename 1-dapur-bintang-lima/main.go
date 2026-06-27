@@ -9,6 +9,7 @@ type Restaurant struct {
 	Is24Hour bool;
 }
 
+// ? r itu adalah alias yang nantinya Restaurant itu jadi singkat yaitu r, dan ini tanpa * yang artinya
 func (r Restaurant) BukaToko() {
 	fmt.Println("Perhatian!, Restaurant: ", r.Name, " sudah dibuka")
 }
