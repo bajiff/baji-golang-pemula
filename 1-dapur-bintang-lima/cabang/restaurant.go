@@ -2,6 +2,7 @@ package cabang
 
 import "fmt"
 
+// ? Cara membuat struct atau blueprint gampangnya
 type Restaurant struct {
 	Name string;
 	totalChef int;

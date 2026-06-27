@@ -21,7 +21,7 @@ func main () {
 	center.BuatPesanan("Nasi Goreng")
 	fmt.Println(center.Name)
 	fmt.Println(center.Is24Hour)
-	center.TambahKoki(100)
+	center.TambahKoki(20)
 
 	fmt.Println("")
 
@@ -29,5 +29,5 @@ func main () {
 	cirebonCity.BuatPesanan("Nasi Lengko")
 	fmt.Println(cirebonCity.Name)
 	fmt.Println(cirebonCity.Is24Hour)
-	cirebonCity.TambahKoki(100)
+	cirebonCity.TambahKoki(50)
 }
