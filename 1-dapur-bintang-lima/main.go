@@ -2,48 +2,60 @@ package main
 
 import "fmt"
 
+// ? Cara membuat struct atau blueprint gampangnya
 type Restaurant struct {
-	Name string
-	TotalChef int
-	Is24Hour bool
+	Name string;
+	TotalChef int;
+	Is24Hour bool;
 }
 
 func (r Restaurant) BukaToko() {
-	fmt.Println("Perhatian!!!, Restoran ", r.Name, "telah dibuka!!!")
+	fmt.Println("Perhatian!, Restaurant: ", r.Name, " sudah dibuka")
 }
 
-func (r Restaurant) BuatPesanan(namaMenu string) {
-	fmt.Println("Chef di ", r.Name, " sedang memasak ", namaMenu)
+func (r Restaurant) BuatPesanan(namaPesanan string) {
+	fmt.Println("Ada pesanan di Restaurant ", r.Name, " pesanan: ", namaPesanan)
 }
 
+func (r *Restaurant) TambahKoki(tambahan int) {
+	r.TotalChef = r.TotalChef + tambahan
+}
 
+func (r Restaurant) TambahKokii(tambahan int) {
+	r.TotalChef = r.TotalChef + tambahan
+}
 
 func main () {
 	center := Restaurant{
-		Name: "Baji Restaurant",
-		TotalChef: 10,
-		Is24Hour: false,
+		Name: "Baji Restaurant Pusat",
+		TotalChef: 100,
+		Is24Hour: true,
 	}
 
 	cirebonCity := Restaurant{
-		Name: "Baji Restaurant Cirebon",
+		Name: "Baji Restaurant Cirebon City",
 		TotalChef: 40,
 		Is24Hour: true,
 	}
 	
-	cirebonCity.BukaToko()
-	cirebonCity.BuatPesanan("Seblak Cihuy")
-	
-	fmt.Println("====== Welcome To Baji Restaurant ======")
-	fmt.Println("=== Pusat ===")
-	fmt.Println("Data: ", center)
-	fmt.Println("Nama: ", center.Name)
-	fmt.Println("TotalChef: ", center.TotalChef)
-	fmt.Println("Is 24 Hour?: ", center.Is24Hour)
+	fmt.Println("=== Welcome to Baji Restaurant ===")
+	center.BukaToko()
+	center.BuatPesanan("Nasi Goreng")
+	fmt.Println(center.Name)
+	fmt.Println(center.TotalChef)
+	fmt.Println(center.Is24Hour)
+	center.TambahKoki(20)
+	// center.TambahKokii(20)
+	fmt.Println(center.TotalChef)
 
-	fmt.Println("=== Cirebon City ===")
-	fmt.Println("Data: ", cirebonCity.Name)
-	fmt.Println("Nama: ", cirebonCity.Name)
-	fmt.Println("TotalChef: ", cirebonCity.TotalChef)
-	fmt.Println("Is 24 Hour?: ", cirebonCity.Is24Hour)
+	fmt.Println("")
+
+	cirebonCity.BukaToko()
+	cirebonCity.BuatPesanan("Nasi Lengko")
+	fmt.Println(cirebonCity.Name)
+	fmt.Println(cirebonCity.TotalChef)
+	fmt.Println(cirebonCity.Is24Hour)
+	cirebonCity.TambahKoki(20)
+	// cirebonCity.TambahKokii(20)
+	fmt.Println(cirebonCity.TotalChef)
 }
