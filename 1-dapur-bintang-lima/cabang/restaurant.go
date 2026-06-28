@@ -5,9 +5,19 @@ import "fmt"
 
 // ? Cara membuat struct atau blueprint gampangnya
 type Restaurant struct {
-	Name string;
-	totalChef int;
-	Is24Hour bool;
+	Name      string
+	totalChef int
+	Is24Hour  bool
+}
+
+func NewRestaurant(restaurantName string, totalChef int, is24Hour bool) *Restaurant {
+	newRestaurant := Restaurant{
+		Name:      restaurantName,
+		totalChef: totalChef,
+		Is24Hour:  is24Hour,
+	}
+
+	return &newRestaurant
 }
 
 // ? r itu adalah alias yang nantinya Restaurant itu jadi singkat yaitu r, dan ini tanpa * yang artinya
@@ -20,6 +30,7 @@ func (r Restaurant) BuatPesanan(namaPesanan string) {
 }
 
 func (r *Restaurant) TambahKoki(tambahan int) {
+	fmt.Println("Total Chef ", r.totalChef, " + Chef Tambahan ", tambahan)
 	r.totalChef = r.totalChef + tambahan
 }
 
