@@ -1,3 +1,4 @@
+// ! cabang/restaurant.go
 package cabang
 
 import "fmt"
@@ -22,6 +23,6 @@ func (r *Restaurant) TambahKoki(tambahan int) {
 	r.totalChef = r.totalChef + tambahan
 }
 
-func (r Restaurant) TambahKokii(tambahan int) {
-	r.totalChef = r.totalChef + tambahan
+func (r Restaurant) GetTotalChef() int {
+	return r.totalChef
 }
