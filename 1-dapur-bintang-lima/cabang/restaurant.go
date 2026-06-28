@@ -37,3 +37,7 @@ func (r *Restaurant) TambahKoki(tambahan int) {
 func (r Restaurant) GetTotalChef() int {
 	return r.totalChef
 }
+
+func (r Restaurant) Tutup(){
+	fmt.Printf("Perhatian Restaurant: %s telah ditutup, mohon untuk mempersiapkan keluar dari Restaurant", r.Name)
+}

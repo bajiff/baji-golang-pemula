@@ -6,6 +6,10 @@ import (
 	"fmt"
 )
 
+type Facilities interface {
+	Tutup()
+}
+
 func main() {
 	center := cabang.NewRestaurant("Baji Restaurant Pusat", 100, false)
 
@@ -45,4 +49,14 @@ func main() {
 	fmt.Println("Total Worker saat ini: ", bedulanCity.GetTotalWorker())
 	bedulanCity.AddWorker(10)
 	fmt.Println("Total Worker saat ini: ", bedulanCity.GetTotalWorker())
+	
+
+	fmt.Println("\n ===== INSTRUKSI DARI BOS BESAR: TUTUP SEMUANYA =====")
+	
+	daftarFasilitas := []Facilities{center,cirebonCity,bedulanCity}
+	
+	for _, facility := range daftarFasilitas {
+		facility.Tutup()
+	}
 }
+

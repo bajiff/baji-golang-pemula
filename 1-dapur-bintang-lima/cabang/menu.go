@@ -48,3 +48,7 @@ func (m *Menu) AddWorker(worker int) int {
 	fmt.Println("")
 	return m.worker
 }
+
+func (m Menu) Tutup(){
+	fmt.Printf("Perhatian Menu: %s telah ditututp, tidak bisa memesan, semuanya sudah ditarik", m.Menu)
+}
