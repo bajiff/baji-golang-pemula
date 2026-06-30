@@ -1,0 +1,7 @@
+Bagaimana cara logis di dunia nyata untuk mencegah dua koki saling berebut satu toples garam di detik yang sama?
+
+Menurut saya caranya yaitu memberikan kunci di masing-masing toples, dan kunci tersebut hanya di miliki oleh koki yang mempunyai kunci toples tersebut,
+
+MIsal Koki A punya kunci toples a, begitupun Koki B mempunyai kunci toples b, maka Koki A tidak bisa mengakses toples b karena tidak mempunyai kuncinya begitupun Koki B jika Koki A ingin membuka toples b maka harus mengantre terlebih dahulu sampai kuncinya di kembalikan ini yang disebut teknik Mutual Exclution, 
+
+Menurutmu gimana? Apakah masih linear dengan Golang?
