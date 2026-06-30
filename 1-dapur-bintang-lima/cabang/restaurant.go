@@ -1,7 +1,11 @@
 // ! cabang/restaurant.go
 package cabang
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+	"time"
+)
 
 // ? Cara membuat struct atau blueprint gampangnya
 type Restaurant struct {
@@ -40,4 +44,12 @@ func (r Restaurant) GetTotalChef() int {
 
 func (r Restaurant) Tutup(){
 	fmt.Printf("Perhatian Restaurant: %s telah ditutup, mohon untuk mempersiapkan keluar dari Restaurant\n", r.Name)
+}
+func Masak(pesanan string, waktuDetik time.Duration, wg *sync.WaitGroup){
+	defer wg.Done()
+
+	fmt.Printf("Koki Mulai memasak %s \n", pesanan)
+	fmt.Printf("Dengan durasi: %d\n", waktuDetik)
+	time.Sleep(time.Duration(waktuDetik) * time.Second)
+	fmt.Printf("BAM!!!. Pesanan %s selesai\n", pesanan)
 }
