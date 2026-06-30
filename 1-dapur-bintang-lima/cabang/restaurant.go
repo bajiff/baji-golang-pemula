@@ -30,8 +30,8 @@ func (r Restaurant) BuatPesanan(namaPesanan string) {
 }
 
 func (r *Restaurant) TambahKoki(tambahan int) {
-	fmt.Println("Total Chef ", r.totalChef, " + Chef Tambahan ", tambahan)
 	r.totalChef = r.totalChef + tambahan
+	fmt.Println("Total Chef ", r.totalChef-tambahan, " + Chef Tambahan ", tambahan, " = ", r.totalChef)
 }
 
 func (r Restaurant) GetTotalChef() int {
@@ -39,5 +39,5 @@ func (r Restaurant) GetTotalChef() int {
 }
 
 func (r Restaurant) Tutup(){
-	fmt.Printf("Perhatian Restaurant: %s telah ditutup, mohon untuk mempersiapkan keluar dari Restaurant", r.Name)
+	fmt.Printf("Perhatian Restaurant: %s telah ditutup, mohon untuk mempersiapkan keluar dari Restaurant\n", r.Name)
 }

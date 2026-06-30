@@ -44,7 +44,7 @@ func (m Menu) GetTotalWorker() int {
 
 func (m *Menu) AddWorker(worker int) int {
 	m.worker = m.worker + worker
-	fmt.Printf("Worker sekarang: %d + Worker Tambahan: %d = %d", m.worker-worker, worker, m.worker)
+	fmt.Printf("Worker sekarang: %d + Worker Tambahan: %d = %d", (m.worker-worker), worker, m.worker)
 	fmt.Println("")
 	return m.worker
 }
